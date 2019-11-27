@@ -1,0 +1,46 @@
+<ion-content>
+	<div (click)="showDates()">
+		<div class="page-content page-content-full">	
+			<div ><!--Enables this element to be scrolled --> 	
+				
+				<div class="cover-item cover-item-full">
+					<div class="cover-content cover-content-center">
+						<div style="height:100vh; width:100%; display:table">
+							<div class="content content-boxed-padding" style="display:table-cell; vertical-align: middle; text-align: center;">
+								<img src="assets/images/logo.svg" style="width:100%;">												
+								<em class="menu-logo-text hiperwave color-white" style="font-size:35px; color: #e5287c !important;">El mejor viaje de tu vida</em>
+								<p class="color-white center-text half-top font-12">
+									Bienvenidos a MIF, en esta App podrás encontrar toda la información para hacer tu estancia más cómoda. Selecciona tu fecha de salida y regístrate.
+								</p>
+								
+								<a href="javascript:void(0)" class="button button-blue button-full uppercase ultrabold button-s">Fecha de salida</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="cover-infinite-background"></div>
+					<div class="cover-overlay overlay bg-black opacity-80 fixed"></div>
+				</div>		
+				
+			</div>  
+		</div>
+		<a href="#" class="back-to-top-badge back-to-top-small"><i class="fa fa-angle-up"></i>Back to Top</a>
+	</div>
+
+	<!--- Action Sheet Share List-->
+	<div id="menu-sheet-2" class="menu-wrapper menu-dark menu-bottom {{activateMenu}}">
+		<em class="menu-divider menu-divider-contrast uppercase">Fechas de salida<i class="fa fa-calendar"></i></em>
+		<div class="content">
+			<ul class="link-list">
+				
+				<li *ngFor="let i of fechas">
+					<a (click)="goLogin(i.id)" href="javascript:void(0)" class="no-top">
+						<i class="fa fa-ship font-14"></i>
+						{{i.fecha}} <i class="fa fa-angle-right"></i>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">
+		<div id="page-content-scroll" class=""><!--Enables this element to be scrolled --> 	
+			<div class="content header-clear-large">
+				<div class="blog-categories blog-categories-3 small-bottom">
+					
+
+					<a *ngFor="let i of list" href="javascript:void(0)" (click)="presentModal(i)">
+						<strong></strong>
+						<em>{{i.nombre_corto}}</em>
+						<span class="{{i.fondo}} opacity-50"></span>
+						<img src="{{i.miniatura}}" class="preload-image responsive-image" alt="img">
+					</a>
+					
+					<div class="clear"></div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</ion-content>

@@ -1,0 +1,96 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">
+	<div id="page-content-scroll">
+		<ion-refresher slot="fixed" (ionRefresh)="getNotices($event)">
+			    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles">
+			    </ion-refresher-content>
+		</ion-refresher>
+		<div style="text-align: center">
+			<ion-spinner *ngIf="onloading" paused="true"></ion-spinner>
+		</div>
+	<div *ngIf="list.hoy.length>0" class="header-dark header-clear-large">
+		<div class="article-card no-border no-bottom">
+			<h4 class="uppercase ultrabold"><i class="far fa-gem"></i> Recomendados para hoy </h4>
+			<div class="decoration decoration-slash half-bottom"></div>
+		</div>
+		<div class="content">
+			<div class="gallery gallery-thumbs gallery-round">
+				<a *ngFor="let i of list.hoy" class="show-gallery" href="javascript:void(0)" title="{{i.nombre_corto}}">
+					<div (click)="presentModal(i)">
+						<img src="{{i.miniatura}}" class="preload-image responsive-image" alt="{{i.nombre_corto}}">
+						<span>{{i.nombre_corto}}</span>
+					</div>
+				</a>				
+			</div>
+		</div>
+	</div>
+	<div *ngIf="list.semana.length >0" class="article-card no-border no-bottom">
+		<h4 class="uppercase ultrabold"><i class="far fa-gem"></i> Destacados de tu semana</h4>
+		<div class="decoration decoration-slash half-bottom"></div>
+	</div>
+	
+	<div *ngFor="let i of list.semana" class="article-card bg-white half-bottom no-border">
+		<a (click)="presentModal(i)" href="javascript:void(0)" class="article-header">
+			<span class="article-overlay"></span>
+			<span class="article-image preload-image" [ngStyle]="{'background':'url('+i.foto+')','background-size':'cover'}"></span>
+			<span class="article-category bg-pink-dark color-white uppercase">{{i.nombre_corto}}</span>			
+			<span class="article-time color-gray-light">{{i.fecha_format}}<i class="far fa-clock opacity-50"></i></span>
+		</a>		
+	</div>
+
+	<div  *ngIf="list.notelopierdas.length >0" class="article-card no-border no-bottom">
+		<h4 class="uppercase ultrabold"><i class="far fa-grin-tongue-wink"></i> No te lo pierdas</h4>
+		<div class="decoration decoration-slash half-bottom"></div>
+	</div>
+	<div class="article-card bg-white half-bottom no-border">
+		
+		<div *ngFor="let i of list.notelopierdas" class="news-list-item">
+			<div (click)="presentModal(i)">
+				<img class="preload-image" src="{{i.miniatura}}" alt="{{i.nombre_corto}}">
+				<strong>{{i.nombre_corto}}</strong>
+			</div>
+			<span><i class="far fa-clock"></i>{{i.fecha_format}} <a href="javascript:void(0)">{{i.lugar_text}}</a></span>
+		</div>
+		
+	</div>
+	<div *ngIf="djs.length>0" class="article-card no-border no-bottom full-top">
+		<h4 class="uppercase ultrabold"><i class="far fa-grin-tongue-wink"></i> Esta noche fiesta con el DJ</h4>
+		<div class="decoration decoration-slash half-bottom"></div>
+	</div>
+	<div class="gallery gallery-wide">
+		<div *ngFor="let i of djs" class="article-header">
+			<div  (click)="presentModalDj(i)">
+				<img src="{{i.miniatura}}" class="preload-image responsive-image" alt="img">
+				<strong>{{i.nombre}}</strong>
+				<em>{{i.seudonimo}}</em>
+				<span class="overlay overlay-gradient"></span>
+			</div>
+		</div>
+	</div>
+	<div class="article-card no-border no-bottom">
+		<h4 class="uppercase ultrabold"><i class="far fa-comment-dots"></i> Se dice en las redes...</h4>
+		<div class="decoration decoration-slash half-bottom"></div>
+	</div>
+	<div class="article-card bg-white half-bottom no-border">
+		<div class="timeline-deco"></div>
+		
+		<div *ngFor="let i of list.redes" class="timeline-item">
+			<i class="scale-hover">
+				<div class="article-image preload-image" [ngStyle]="{'background-image': 'url('+i.foto+')'}"></div>
+			</i>
+			<div class="timeline-item-content">
+				<p class="thiner color-black" style="margin-bottom:-10px">
+					{{i.texto}}<br/>
+					<span>
+						<i class="far fa-clock" style="position: inherit;display: inline;font-size: 12px;"></i> {{i.fecha}} 
+						<em class="{{i.color}}" style="padding: 3px 6px;"> {{i.tipo}} </em>
+					</span>
+				</p>
+				
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+</ion-content>

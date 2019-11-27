@@ -1,0 +1,83 @@
+<ion-content>
+<div >
+		
+	<div  class="page-content page-content-full">	
+		<div ><!--Enables this element to be scrolled --> 	
+			
+			<div class="cover-item cover-item-full">
+				<div class="cover-content cover-content-center">
+
+					<div style="display:table; width:100%; height:100vh">
+					
+						<div style="display: table-cell; vertical-align:middle;">
+
+					<div class="page-login content-boxed content-boxed-padding no-top no-bottom">												
+						
+						<form (ngSubmit)="register()">
+							<h3 class="uppercase ultrabold full-top no-bottom color-black">Registrate</h3>
+							<p class="smaller-text half-bottom">Hola chic@! Por favor introduce tus datos.</p>
+							<div class="page-login-field half-top">
+								<i class="fa fa-user"></i>
+								<input type="text" [(ngModel)]="data.nombre" name="nombre" placeholder="Nombre completo">
+								<em>(requerido)</em>
+							</div>
+
+							<div class="page-login-field half-top">
+								<i class="fas fa-at"></i>
+								<input type="email" [(ngModel)]="data.email" name="email" placeholder="Correo electrónico">
+								<em>(requerido)</em>
+							</div>
+
+							<div class="page-login-field half-top">
+								<i class="fa fa-mobile-alt"></i>
+								<input type="number" [(ngModel)]="data.telefono" name="telefono" placeholder="Teléfono">
+								<em>(requerido)</em>
+							</div>
+							
+							<div class="page-login-field half-top">
+								<i class="fa fa-users"></i>
+								<input type="text" [(ngModel)]="data.numero_grupo" name="numero_grupo" placeholder="Grupo con el que viaja">
+								<em>(requerido)</em>
+							</div>	
+							<div class="page-login-field half-top">
+								<i class="fa fa-school"></i>
+								<input type="text" [(ngModel)]="data.instituto" name="instituto" placeholder="Instituto donde estudia">
+								<em>(requerido)</em>
+							</div>	
+							<div class="page-login-field half-top">
+								<i class="fas fa-map-marker-alt"></i>
+								<input type="text" [(ngModel)]="data.localidad" name="localidad" placeholder="Localidad">
+								<em>(requerido)</em>
+							</div>	
+							<div class="page-login-field half-bottom">
+								<i (click)="hidePassword = hidePassword?false:true" class="fa {{data.password==''?'fa-lock':'fa-eye'}}"></i>
+								<input type="{{hidePassword?'password':'text'}}" [(ngModel)]="data.password" name="password" placeholder="Crear Contraseña">								
+								<em>(requerido)</em>
+							</div>
+							<div class="page-login-field half-bottom">
+								<i (click)="hidePassword = hidePassword?false:true" class="fa {{data.password2==''?'fa-lock':'fa-eye'}}"></i>
+								<input type="{{hidePassword?'password':'text'}}" [(ngModel)]="data.password2" name="password2" placeholder="Repetir Contraseña">								
+								<em>(requerido)</em>
+							</div>
+							<div class="page-login-links small-bottom center-text">
+								<a class="forgot" href="javascript:void(0)" [routerLink]="['/boot/login']">
+									<i class="fa fa-user float-right"></i>¿Ya estás registrado? Entra aquí</a>
+								<div class="clear"></div>
+							</div>
+							<button type="submit" class="button button-blue button-full button-s uppercase ultrabold">REGISTRAR CUENTA</button>
+						</form>
+
+					</div>		
+				</div>
+			</div>
+				</div>
+				<div class="cover-infinite-background"></div>
+				<div class="cover-overlay overlay bg-black opacity-80 fixed"></div>
+			</div>	
+			
+		</div>  
+	</div>
+	
+	<a href="#" class="back-to-top-badge back-to-top-small"><i class="fa fa-angle-up"></i>Back to Top</a>
+</div>
+</ion-content>

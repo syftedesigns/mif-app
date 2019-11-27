@@ -1,0 +1,18 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content pulsera {{main.classLateralContent}}">	
+		<div id="page-content-scroll"><!--Enables this element to be scrolled --> 			
+
+			<div class="coverpage" style="height:auto">
+				<div class="cover-slider">
+								
+					<div class="cover-item" style="background-image:url(assets/images/pictures_vertical/bg2.jpg);height:51vh">
+						<div class="cover-content cover-content-center" [innerHTML]="pulsera"></div>
+						<div class="cover-overlay overlay bg-black opacity-70" style="height:100%"></div>
+					</div>		
+					
+				</div>
+			</div>	
+			<div class="pulsera2" [innerHTML]="pulsera2"></div>
+		</div>  
+	</div>
+</ion-content>

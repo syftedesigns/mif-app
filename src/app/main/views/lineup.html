@@ -1,0 +1,21 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">
+	<div id="page-content-scroll" class=""><!--Enables this element to be scrolled -->	
+		<div class="gallery gallery-wide">
+			
+			<a *ngFor="let i of list" data-deploy-card="article-lineup1" href="javascript:void(0)" (click)="presentModal(i)" class="article-header">
+				<img src="{{i.miniatura}}" class="preload-image responsive-image" alt="img">
+				<strong>{{i.titulo}}</strong>
+				<em style="bottom: 24px;color: #fff;">{{i.nombre}}</em>
+				<em>{{i.seudonimo}}</em>
+				<span class="overlay overlay-gradient"></span>
+			</a>
+			
+		</div>
+		
+		
+		
+		
+	</div>
+</div>
+</ion-content>

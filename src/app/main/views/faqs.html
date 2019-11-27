@@ -1,0 +1,32 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">	
+		<div id="page-content-scroll"><!--Enables this element to be scrolled --> 			
+				
+			
+			<div class="content full-top">
+				<h3 class="uppercase center-text ultrabold">
+					FAQ's
+				</h3>
+				<p class="boxed-text-large">
+					Resolvemos aquí tus dudas...
+				</p>
+			</div>
+			
+			<div class="content full-bottom">
+				<div *ngFor="let i of list; let x = index">
+					<div class="faq" (click)="active = active!=x?x:-1">
+						<h6 class="faq-question pointer">{{i.nombre}}<i class="fa fa-plus {{active==x?'rotate-45':''}}"></i></h6>
+						<div class="faq-answer {{active==x?'block':''}}">
+							<p>
+								{{i.texto}}
+							</p>
+						</div>					
+					</div>
+				</div>
+				
+                <div class="decoration"></div>
+			</div>
+			
+		</div>  
+	</div>
+</ion-content>

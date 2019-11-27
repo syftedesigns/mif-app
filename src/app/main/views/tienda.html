@@ -1,0 +1,121 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">
+		<div id="page-content-scroll"><!--Enables this element to be scrolled --> 	
+
+			<div class="content-boxed">
+				<div class="store-categories">
+					<a href="javascript:void(0)" (click)="active=3" class="{{active==3?'tabStoreActive':''}}"><i class="fas fa-store font-20"></i><em class="color-black">Carpa MIF</em></a>
+					<a href="javascript:void(0)" (click)="active=2" class="{{active==2?'tabStoreActive':''}}">
+						<div style="text-align: center;position: absolute;width: 100%;top: 18px;">
+							<img src="https://www.mallorcaislandfestival.com/img/{{active==2?'eisaimada-icon.svg':'eisaimada-icon-black.svg'}}" alt="" style="width: 35px;display: inline-block;">
+						</div>
+						<em class="color-black">Ensaimada</em>
+					</a>					
+					<a href="javascript:void(0)" (click)="active=1" class="{{active==1?'tabStoreActive':''}}"><i class="fas fa-store-alt fa-2x"></i><em class="color-black">Merchandising</em></a>					
+				</div>
+			</div>
+
+			<div *ngIf="active==3" class="content content-boxed full-top" style="background:url(https://www.mallorcaislandfestival.com/img/carpa.jpg); background-size:cover; background-position: center;">
+				<div class="container">
+					<div style="text-align:center;margin-top: 30px;color: #eb4c88 !important;">
+						<i style="" class="fas fa-store fa-4x"></i>
+					</div>
+					<h1 class="ultrabold uppercase color-white center-text fa-2x">Carpa MIF</h1>
+					<p class="small-text color-gray-light center-text half-bottom">¿Tienes alguna duda?</p>
+					<div class="decoration deco-thick deco-0 half-top full-bottom"></div>
+					<p class="boxed-text full-bottom color-white font-15 thin">
+						Pasa por la carpa ¡MIF INFO! Éste es el punto central de información del MALLORCA ISLAND FESTIVAL, y se te facilitará cualquier información que se desee sobre los horarios de autocares, información turística, punto rosa y resolución de consultas que podáis tener.
+					</p>	
+					<p class="boxed-text full-bottom color-white font-15 thin">
+						Horario:<br/>
+						de 07:00h a 21:00h.
+					</p>
+					<p class="boxed-text full-bottom color-white font-15 thin">
+						Lugar:<br/>
+						Piscina FEDRA’s
+					</p>									
+				</div>			
+				
+			</div>
+			
+			<div id="contenido" *ngIf="active==1" class="content content-boxed full-top">
+				
+				  <ion-slides pager="true">
+
+					    
+					    <ion-slide *ngFor="let p of productos">
+					      <div class="store-slide-1">
+								<a href="javascript:void(0)" class="store-slide-image">
+									<img src="{{p.foto}}" alt="">
+								</a>
+								<div class="store-slide-title half-bottom">
+									<h4 class="no-bottom center-text color-black">{{p.titulo}}</h4>
+									<em class="color-gray-dark small-text center-text">{{p.descripcion}}</em>
+								</div>
+								<div class="store-slide-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<div class="store-slide-price">
+									<strong class="color-black">
+										{{p.precio}}
+										<br> 
+										<em class="color-green-dark" style="text-align: left">En Stock</em>
+									</strong>
+									<a href="javascript:void(0)" (click)="share(p)">
+										<i class="fa fa-share-alt-square fa-2x"></i>
+										<em>Compartir</em>
+									</a>
+									<div class="clear"></div>
+								</div>
+								<div class="store-slide-button">
+									<a href="javascript:void(0)" class="button button-blue button-center button-rounded button-full button-s uppercase ultrabold">Compralo en la carpa MIF</a>
+								</div>
+						  </div>
+					    </ion-slide>
+
+					    
+				  </ion-slides>
+			</div>
+			
+			
+			
+
+			<div *ngIf="active==2" class="content content-boxed full-top" style="background:url(https://www.mallorcaislandfestival.com/img/ensaimada.jpg); background-size:cover; background-position: center;">
+				<div class="container">
+					<div style="text-align:center;margin-top: 30px;color: #eb4c88 !important;">
+						<img src="https://www.mallorcaislandfestival.com/img/eisaimada-icon.svg" style="width: 70px;display: inline-block;">
+					</div>
+					<h1 class="ultrabold uppercase color-white center-text fa-2x">
+						RESERVA <br> TU ENSAIMADA
+					</h1>
+					<p class="small-text color-gray-light center-text half-bottom">EN LA CARPA MIF INFO</p>
+					<div class="decoration deco-thick deco-0 half-top full-bottom"></div>
+					<h1 class="ultrabold uppercase color-white center-text fa-2x" style="font-size:22px">
+						OFERTA ESPECIAL 19,90€
+					</h1>
+					<div style="text-align:center;margin-top: 30px;color: #eb4c88 !important;">
+						<img src="https://www.mallorcaislandfestival.com/img/ensaimada-1.png" style="width: 200px;display: inline-block;">
+					</div>
+					<div class="decoration deco-thick deco-0 half-top full-bottom"></div>
+					<h1 class="ultrabold uppercase color-white center-text fa-2x" style="font-size:22px">
+						ENSAIMADA 9,90€
+					</h1>
+					<div style="text-align:center;margin-top: 30px;color: #eb4c88 !important;">
+						<img src="https://www.mallorcaislandfestival.com/img/ensaimada-2.png" style="width: 100px;display: inline-block;">
+					</div>
+					<p class="boxed-text full-bottom color-white font-15 thin">
+						La tendremos preparada el día de tu CHECK OUT, ¡Para que se la puedas llevar a tu familia recién hecha!<br/><br/>
+						Si no, también puedes intentar si tienes suerte el día del Check Out y, si aún queda alguna, podrás comprarla en éste momento.
+					</p>								
+				</div>			
+				
+			</div>
+
+			
+		</div>  
+	</div>
+</ion-content>

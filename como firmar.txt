@@ -1,0 +1,6 @@
+cd c://xampp/htdocs/marecos/academico_radio
+Esta linea no... keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mif.keystore platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk mif
+jon251414
+zipalign -v 4 platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk mif.apk

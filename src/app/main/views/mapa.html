@@ -1,0 +1,11 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">
+		<div id="page-content-scroll"><!--Enables this element to be scrolled -->
+			
+			<div class="map-full cover-item">
+				<img (click)="zoom()" src="https://www.mallorcaislandfestival.com/img/mapa_app.jpg">
+			</div>
+
+		</div>
+	</div>
+</ion-content>

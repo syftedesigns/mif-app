@@ -1,0 +1,48 @@
+<ion-content>
+<div >
+		
+	<div class="page-content page-content-full">	
+		<div ><!--Enables this element to be scrolled --> 	
+			
+			
+
+			<div class="cover-item cover-item-full">
+				<div class="cover-content cover-content-center">
+					
+					<div style="display:table; width:100%; height:100vh">
+					
+						<div style="display: table-cell; vertical-align:middle;">
+							
+							<form (ngSubmit)="recover()">
+								<div class="page-login content-boxed content-boxed-padding no-top no-bottom">
+									<img class="preload-image login-bg responsive-image no-bottom" src="assets/images/pictures/9w.jpg" data-src="assets/images/pictures/9w.jpg" alt="img">
+									<img class="preload-image login-image" src="assets/images/pictures/0s.png" data-src="assets/images/pictures/0s.png" alt="img">
+									<h3 class="uppercase ultrabold full-top no-bottom color-black">Entrar</h3>
+									<p class="smaller-text half-bottom">Hola chic@! Por favor introduce tus datos.</p>
+									<div class="page-login-field half-top">
+										<i class="fa fa-user"></i>
+										<input type="email" [(ngModel)]="data.email" name="email"  placeholder="Email">
+										<em>(requerido)</em>
+									</div>			
+									
+									<button type="submit" class="button button-blue button-full button-s uppercase ultrabold">RECUPERAR</button>
+									<div class="page-login-links small-bottom center-text">
+										<a class="forgot back-button" [routerLink]="['/boot/login']" href="javascript:void(0)">Volver</a>
+									</div>
+								</div>	
+							</form>
+						</div>
+					</div>
+
+				</div>
+				<div class="cover-infinite-background"></div>
+				<div class="cover-overlay overlay bg-black opacity-80 fixed"></div>
+			</div>	
+
+			
+		</div>  
+	</div>
+	
+	<a href="#" class="back-to-top-badge back-to-top-small"><i class="fa fa-angle-up"></i>Back to Top</a>
+</div>
+</ion-content>

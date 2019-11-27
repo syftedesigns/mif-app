@@ -1,0 +1,7 @@
+{
+  "name": "MIF APP",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

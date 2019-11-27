@@ -1,0 +1,32 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">	
+		<div id="page-content-scroll"><!--Enables this element to be scrolled --> 	
+
+			<ion-refresher slot="fixed" (ionRefresh)="getNotices($event)">
+			    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles">
+			    </ion-refresher-content>
+			</ion-refresher>
+
+			<div style="text-align: center">
+				<ion-spinner *ngIf="onloading" paused="true"></ion-spinner>
+			</div>
+			
+						
+			<div class="content full-top">
+				
+				<div *ngFor="let l of list"  class="news-list-item">
+					<a href="javascript:void(0)">
+						<img src="{{l.foto}}" alt="img">
+						<strong>{{l.texto}}</strong>
+					</a>
+					<span>
+						<i class="far fa-clock"></i> {{l.fecha}}
+						<em class="{{l.color}}" style="padding: 3px 6px;"> {{l.tipo}} </em>
+					</span>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</ion-content>

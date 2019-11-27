@@ -1,0 +1,94 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">	
+		<div id="page-content-scroll" class="header-clear-larger"><!--Enables this element to be scrolled --> 	
+			
+			<div id="page-vcard" class="content content-boxed content-boxed-padding">
+				<div class="vcard-header">
+					<div (click)="selectImage()" class="perfilFoto" [ngStyle]="{'background-image': 'url('+user.user.foto+')','background-size':'cover'}"></div>					
+					<h1 class="bold large-text color-black">{{data.nombre}}</h1>
+					<em class="small-text color-gray-dark small-bottom">{{data.email}}</em>
+					<a  (click)="selectImage()" href="javascript:void(0)" target="_blank" class="default-link button button-xs button-green button-rounded uppercase ultrabold half-bottom">Pon tu foto</a>
+				</div>
+            </div>
+
+            
+
+
+            <div id="page-vcard2" class="content content-boxed content-boxed-padding">
+				<h4 class="uppercase ultrabold">Tus datos</h4>
+				<p class="half-bottom">
+					Si quieres actualizar algún dato, hazlo sin problema!!
+				</p>
+
+				<form (ngSubmit)="update()">
+					
+					
+					
+					<div class="input-simple-1 has-icon input-green full-bottom">
+						<strong>(requerido)</strong>
+						<em>Nombre</em>
+						<i class="fa fa-user"></i>
+						<input type="text" [(ngModel)]="data.nombre" name="nombre" placeholder="Nombre completo">
+					</div>
+
+					<div class="input-simple-1 has-icon input-green full-bottom">
+						<strong>(requerido)</strong>
+						<em>Email</em>
+						<i class="fa fa-envelope"></i>
+						<input type="email" [(ngModel)]="data.email" name="email" placeholder="Correo electrónico">
+					</div>
+
+					<div class="input-simple-1 has-icon input-green full-bottom">
+						<strong>(requerido)</strong>
+						<em>Teléfono</em>
+						<i class="fa fa-mobile-alt"></i>
+						<input type="number" [(ngModel)]="data.telefono" name="telefono" placeholder="Teléfono">
+					</div>
+
+					<div class="input-simple-1 has-icon input-green full-bottom">
+						<strong>(requerido)</strong>
+						<em>Numero de grupo</em>
+						<i class="fa fa-users"></i>
+						<input type="text" [(ngModel)]="data.numero_grupo" name="numero_grupo" placeholder="Grupo con el que viaja">
+					</div>
+
+					<div class="input-simple-1 has-icon input-green full-bottom">
+						<strong>(requerido)</strong>
+						<em>Instituto</em>
+						<i class="fa fa-school"></i>
+						<input type="text" [(ngModel)]="data.instituto" name="instituto" placeholder="Instituto donde estudia">
+					</div>
+
+					<div class="input-simple-1 has-icon input-green full-bottom">
+						<strong>(requerido)</strong>
+						<em>Localidad</em>
+						<i class="fa fa-map-marker-alt"></i>
+						<input type="text" [(ngModel)]="data.localidad" name="localidad" placeholder="Localidad">
+					</div>
+
+					<div class="input-simple-1 has-icon input-green full-bottom">
+						<strong>(requerido)</strong>
+						<em>Contraseña</em>
+						<i (click)="hidePassword = hidePassword?false:true" class="fa {{data.password==''?'fa-lock':'fa-eye'}}"></i>
+						<input type="{{hidePassword?'password':'text'}}" [(ngModel)]="data.password" name="password" placeholder="Cambiar Contraseña">
+					</div>
+
+					<div class="select-box select-box-1">
+						<strong>(requerido)</strong>
+						<em>Fecha de salida</em>						
+						<select [(ngModel)]="data.app_fechas_salida_id" name="app_fechas_salida_id">
+							<option *ngFor="let i of fechas" 
+								[value]="i.id" 
+	    						[attr.selected]="i.id==data.app_fechas_salida_id ? true : null">
+	    						{{i.fecha}}
+    						</option>
+						</select>
+					</div>
+					
+					<button type="submit" class="button button-blue button-full button-s uppercase ultrabold">ACTUALIZAR</button>
+				</form>
+            </div>	
+			
+		</div>  
+	</div>
+</ion-content>

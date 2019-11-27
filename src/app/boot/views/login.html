@@ -1,0 +1,60 @@
+<ion-content>
+<div >
+		
+	<div class="page-content page-content-full">	
+		<div><!--Enables this element to be scrolled --> 	
+			
+			
+
+			<div class="cover-item cover-item-full">
+				<div class="cover-content cover-content-center">
+					
+					<div style="display:table; width:100%; height:100vh">
+					
+						<div style="display: table-cell; vertical-align:middle;">
+							<div class="page-login content-boxed content-boxed-padding no-top no-bottom">
+								<form (ngSubmit)="login()" action="">
+									<img class="preload-image login-bg responsive-image no-bottom" src="assets/images/pictures/9w.jpg" data-src="assets/images/pictures/9w.jpg" alt="img">
+									<img class="preload-image login-image" src="assets/images/pictures/0s.png" data-src="assets/images/pictures/0s.png" alt="img">
+									<h3 class="uppercase ultrabold full-top no-bottom color-black">Entrar</h3>
+									<p class="smaller-text half-bottom" style="line-height: 13px; margin-top: 10px; text-align: justify;">¡Bienvenido al Mallorca Island Festival! Si ya estás registrado. introduce tus datos, y si no, ¡Crea tu cuenta!</p>
+									<div class="page-login-field half-top">
+										<i class="fa fa-mobile-alt"></i>
+										<input type="number" [(ngModel)]="data.telefono" name="telefono" placeholder="Teléfono">
+										<em>(requerido)</em>
+									</div>			
+									<div class="page-login-field" style="margin-bottom: 0">
+										<i class="fa fa-lock"></i>
+										<input type="password" [(ngModel)]="data.password" name="password" placeholder="Contraseña">
+										<em>(requerido)</em>
+									</div>
+									<div class="page-login-links half-bottom center-text">
+										<a class="create" [routerLink]="['/boot/recover']" href="javascript:void(0)"><i class="fa fa-eye"></i>Recuperar contraseña</a>
+										<div class="clear"></div>
+									</div>
+									<button type="submit" class="button button-blue button-full button-s uppercase ultrabold">ENTRAR</button>
+									<div class="page-login-links">
+										<a class="forgot center-text" href="javascript:void(0)">
+											Si eres nuevo entra aquí 
+										</a>										
+										<div class="clear"></div>
+									</div>									
+									<button type="button" [routerLink]="['/boot/registro']" class="button button-dark button-full button-s uppercase ultrabold">CREAR CUENTA</button>
+									<div class="page-login-links center-text">
+										<a class="forgot back-button" [routerLink]="['/']" href="javascript:void(0)">Volver</a>
+									</div>
+								</form>
+							</div>	
+						</div>
+					</div>
+
+				</div>
+				<div class="cover-infinite-background"></div>
+				<div class="cover-overlay overlay bg-black opacity-80 fixed"></div>
+			</div>	
+
+			
+		</div>  
+	</div>
+</div>
+</ion-content>

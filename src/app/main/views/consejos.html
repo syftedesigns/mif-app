@@ -1,0 +1,29 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+	
+<div id="page-content" class="page-content {{main.classLateralContent}}">
+	<div id="page-content-scroll"><!--Enables this element to be scrolled --> 			
+			<ion-refresher slot="fixed" (ionRefresh)="getNotices($event)">
+			    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles">
+			    </ion-refresher-content>
+			</ion-refresher>
+			<div class="article-card no-border no-bottom">
+				<h4 class="uppercase ultrabold"><i class="far fa-gem"></i> Consejos importantes</h4>
+				<div class="decoration decoration-slash half-bottom"></div>
+			</div>
+			<div class="content">
+				
+				<div class="news-list-item" *ngFor="let i of list">
+					<a href="javascript:void(0)">
+						<img alt="img" class="preload-image" src="assets/images/pictures/0s.png">
+						<strong>{{i.descr}}</strong>
+					</a>
+					<span>
+						<i class="far fa-clock"></i>{{i.fecha_envio}}						
+					</span>
+				</div>
+
+			</div>
+		
+	</div>  
+</div>
+</ion-content>

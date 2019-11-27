@@ -1,0 +1,29 @@
+<ion-header style="height: 55px !important;">
+<ion-toolbar style="height: 55px !important;">
+    <div id="header" class="header-logo header-dark {{classParentLateralMenu}}">
+        <a href="javascript:void(0)" (click)="dismissModal()"><img src="assets/images/back.svg"></a>        
+        <a href="javascript:void(0)" class="logo" style="width: 80%;">FOTOS</a>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>	
+		<div id="page-content-scroll" style="margin-top:30px;"><!--Enables this element to be scrolled -->
+			
+			
+		
+			<ion-grid>			 
+			  <ion-row>
+			    
+			    <ion-col size="4" *ngFor="let i of fotos">
+			      	<a href="javascript:void(0)" (click)="zoom(i.foto)" class="show-gallery filtr-item" tytle="Cream Pie" data-category="1">
+						<img src="{{i.foto}}" alt="Galeria foto">
+					</a>					
+			    </ion-col>
+			    
+			  </ion-row>
+			</ion-grid>
+			
+		</div>  
+	</div>
+</ion-content>

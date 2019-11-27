@@ -1,0 +1,56 @@
+<ion-header style="height: 55px !important;">
+<ion-toolbar style="height: 55px !important;">
+    <div id="header" class="header-logo header-dark {{classParentLateralMenu}}">
+        <a href="javascript:void(0)" (click)="dismissModal()"><img src="assets/images/back.svg"></a>        
+        <a href="javascript:void(0)" class="logo"  style="width: 80%;">{{d.nombre}}</a>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div>	
+		<div id="page-content-scroll"><!--Enables this element to be scrolled -->
+			
+			<div data-article-card="article-influencers1" class="article-card bg-white no-border article-clone active-card">	
+				<div class="profile-1 full-bottom">
+					<div class="profile-header">
+						<!--<span class="article-back" (click)="dismissModal()"><i class="fa fa-angle-left"></i> Atrás</span>-->	
+						<img src="{{d.foto}}" class="responsive-image">
+					</div>
+					<div class="profile-header-clear"></div>
+					<div class="profile-body">
+						<a href="{{d.boton_siguelo}}" target="_blank" class="profile-button button box-shadow button-s button-round bold button-green button-center">SÍGUELO</a>					
+						<h1 class="profile-heading color-black">{{d.nombre}}</h1>
+						<h2 class="profile-sub-heading">{{d.subtitulo}}</h2>
+						
+						<div class="profile-stats">
+							<a href="#"><i class="fab center-text facebook-color fa-facebook"></i>{{d.seguidores_facebook}}</a>
+							<a href="#"><i class="fab center-text twitter-color fa-twitter"></i>{{d.seguidores_twitter}}</a>
+							<a href="#"><i class="fab center-text color-orange-dark fa-instagram"></i>{{d.seguidores_instagram}}</a>
+							<div class="clear"></div>
+						</div>
+						
+						<div class="decoration half-top"></div>
+						
+						<div class="profile-content">
+							<h5 class="color-black">Sobre {{d.nombre}}</h5>
+							<p>
+								{{d.descripcion}}
+							</p>
+						</div>
+					
+						<div class="decoration half-top"></div>
+						
+						<div class="profile-gallery">
+							<a *ngFor="let i of d.fotos" class="show-gallery" href="javascript:void(0)" alt="img">
+								<img (click)="zoom(i)" class="preload-image responsive-image polaroid-effect polaroid-effect-small" src="{{i}}">
+							</a>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+		</div>  
+	</div>
+</ion-content>

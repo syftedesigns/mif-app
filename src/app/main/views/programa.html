@@ -1,0 +1,66 @@
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<div id="page-content" class="page-content {{main.classLateralContent}}">
+		<div id="page-content-scroll"><!--Enables this element to be scrolled --> 	
+
+			<div class="single-slider">
+				<a href="javascript:void(0)" class="news-slide-1">
+					<img src="{{gran.foto}}" alt="Foto" style="width:100%">
+					<strong class="font-16">{{gran.nombre}}</strong>
+					<em class="bg-yellow-dark">{{gran.lugar_text}}</em>					
+					<span class="overlay overlay-gradient"></span>
+				</a>				
+			</div>
+			<div class="box-shadow">
+				<div class="cal-days bg-gray-light no-bottom">
+					<a *ngFor="let i of dias; let x = index" href="javascript:void(0)" (click)="activeMonth = x">{{i.dias}}</a>
+					<div class="clear"></div>
+				</div>
+				<div class="cal-dates cal-dates-border">
+					<a *ngFor="let i of dias; let x = index" href="javascript:void(0)" (click)="activeMonth = x" class="{{activeMonth==x?'calendarioActive':''}}">
+						{{i.dia}}
+						<div *ngIf="notif[x]>0" class="cal-notif" ui-sref="home" ui-sref-opts="{reload: true}">{{notif[x]}}</div>
+					</a>
+					<div class="clear"></div>
+				</div>
+
+				
+
+				<div *ngFor="let i of dias; let x = index" class="cal-footer">
+					<div *ngIf="x==activeMonth">
+						<h6 class="cal-sub-title uppercase ultrabold bg-night-dark">
+							{{i.label}}
+						</h6>
+
+						<div *ngFor="let p of i.programa" class="cal-schedule" style="height: 110px; overflow: hidden;">
+							<div class="{{p.recordatorio!=null && p.recordatorio.leido==0?'cal-notif-sel':''}}">
+								<em style="width:20%"><img class="preload-image" src="{{p.miniatura}}" alt="img"></em>
+								<div style="width:80%;line-height: 15px;" (click)="presentModal(p)">
+									<strong style="margin-bottom: 12px;">{{p.nombre}}</strong>
+									<span>
+										<i class="fa fa-calendar"></i> {{p.hora}} - {{p.hasta}}<br/>
+										<i class="fa fa-map-marker"></i> {{p.lugar_text}}
+									</span>
+								</div>
+								<div class="ios-switch" style="position: absolute;right: 20px;top: 20px; text-align: center">
+									<ion-toggle color="success" [(ngModel)]="avisos[p.proid]" (ionChange)="toggleAviso(p.proid)"></ion-toggle>								
+									<span style="padding:0">Avisame</span>
+								</div>
+							</div>
+						</div>
+							
+					</div>
+				</div>
+
+				
+
+
+
+
+
+
+
+
+			</div>
+		</div>  
+	</div>
+</ion-content>
